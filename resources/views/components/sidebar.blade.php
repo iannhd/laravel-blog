@@ -55,6 +55,18 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
+                <a href="#"
+                    class="nav-link has-dropdown"
+                    data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>User</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="{{Request::is('post' ? 'active' : '')}}">
+                        <a class="nav-link"
+                            href="{{route('user.index')}}">List User</a>
+                    </li>
+                </ul>
+            </li>
             
             {{-- <li class="nav-item dropdown">
                 <a href="#"

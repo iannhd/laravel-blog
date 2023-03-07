@@ -6,7 +6,9 @@ use App\Models\Category;
 use App\Models\Posts;
 use App\Models\Tags;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+
 
 class PostController extends Controller
 {
@@ -50,7 +52,8 @@ class PostController extends Controller
             'category_id' => $request->category_id,
             'content' => $request->content,
             'gambar' => 'public/upload/posts/' .$new_gambar,
-            'slug' => Str::slug($request->judul)
+            'slug' => Str::slug($request->judul),
+            'user_id' => Auth::id()
         ]); 
 
         $post->tags()->attach($request->tags);
@@ -102,7 +105,8 @@ class PostController extends Controller
                 'category_id' => $request->category_id,
                 'content' => $request->content,
                 'gambar' => 'public/upload/posts/' .$new_gambar,
-                'slug' => Str::slug($request->judul)
+                'slug' => Str::slug($request->judul),
+                'user_id' => Auth::id()
             ];  
         } 
             else 
@@ -111,7 +115,8 @@ class PostController extends Controller
                 'judul' => $request->judul,
                 'category_id' => $request->category_id,
                 'content' => $request->content,
-                'slug' => Str::slug($request->judul)
+                'slug' => Str::slug($request->judul),
+                'user_id' => Auth::id()
             ];  
         }
 

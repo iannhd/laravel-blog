@@ -15,6 +15,7 @@
                 <th>No</th>
                 <th>Judul Post</th>
                 <th>Kategori Post</th>
+                <th>Users</th>
                 <th>Tags</th>
                 <th>Gambar</th>
                 <th>Action</th>
@@ -26,11 +27,10 @@
                 <td>{{$item + $post->firstItem()}}</td>
                 <td>{{$hasil->judul}}</td>
                 <td>{{$hasil->category->name}}</td>
+                <td>{{$hasil->users->name}}</td>
                 <td>
                     @foreach($hasil->tags as $tag)
-                    <ul>
-                        <li class="list-unstyled">{{$tag->name}}</li>
-                    </ul>
+                        <span class="my-2 badge badge-info">{{$tag->name}}</span>
                     @endforeach
                 </td>
                 <td class=""><img src="{{Storage::url("$hasil->gambar")}}"  alt="" class="img-fluid" style="width:200px"> </td>
