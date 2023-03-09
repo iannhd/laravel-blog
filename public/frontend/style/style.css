@@ -33,4 +33,18 @@
   /* identical to box height */
   text-transform: uppercase;
   color: #0A0A0A;
+}
+
+.post-tabs a {
+  font-size: 32px;
+}
+
+.post-card {
+  margin-bottom: 30px !important;
+}
+
+.post-image {
+  width: 764px;
+  height: 573px;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */

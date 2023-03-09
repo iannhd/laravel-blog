@@ -99,7 +99,7 @@
         {{-- Tags --}}
 
 
-        <div class="container-fluid  my-2">
+        <div class="container-fluid my-5">
             <div class="row pill-container">
                 <div class="col-lg-9 col-sm-12 col-md-12 col-xs-12 d-flex flex-wrap ">
                     <a href="#" class=" tags-pill">Tags</a>
@@ -109,7 +109,7 @@
                     <a href="#" class=" tags-pill">Tags</a>
                 </div>
                 <div class="m-auto col-lg-2 col-sm-12 col-md-12 xs-12 d-flex align-items-center justify-content-center">
-                    <h4>Show All Categories</h4>
+                    <button class="btn btn-secondary btn-block">Show All Categories</button>
                 </div>
             </div>
         </div>
@@ -120,44 +120,124 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-9">
-                    <div class="container-fluid">
-                        <div class="row ">
-                           <div class="col-12">
-                            <img class="w-100" src="https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                           </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-10 d-flex flex-wrap">
+                <div class="col-7">
+                    <div class="card m-auto post-card" style="width: 60rem;">
+                        <img class="card-img-top" src="https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
+                        <div class="card-body">
+                           <div class="row">
+                            <div class="col-9"> <div class="tags d-flex flex-wrap">
                                 <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                                    <a href="#" class=" tags-pill">Tags</a>
-                               </div>
-                               <div class="col-2 d-flex">
-                                <p>4w ago</p>
-                               </div>
-                               <div class="col-12">
-                                    <h1>Lorem ipsum dolor sit amet</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Euismod sem nibh malesuada proin tristique eu sed. Volutpat pretium volutpat lorem blandit consectetur ipsum elementum consectetur. Gravida hac id ultrices ac turpis quis. Viverra donec aliquam risus convallis. Proin dictumst ut dui ipsum eu. Odio id pulvinar risus magna. Eu dui pharetra consequat phasellus. Lorem ipsum dolor sit amet consectetur. Euismod sem nibh malesuada proin tristique eu sed. Volutpat pretium volutpat lorem blandit consectetur ipsum elementum consectetur. Gravida hac id ultrices ac turpis quis. Viverra donec aliquam risus convallis. Proin dictumst ut dui ipsum eu. Odio id pulvinar risus magna. Eu dui pharetra consequat phasellus. Lorem ipsum dolor sit amet consectetur. Euismod sem nibh malesuada proin tristique eu sed. Volutpat pretium volutpat lorem blandit consectetur ipsum elementum consectetur. Read more...</p>
-                               </div>
-                           </div>
-                        <div class="row d-flex align-items-center justify-content-center">
-                            <div class=" d-flex flex-wrap">
-                                
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                            </div></div>
+                            <div class="col-3">
+                                <p>4 Weeks Ago</p>
                             </div>
+                           </div>
+                            <h2 class="card-title text-center">Card title</h2>
+                            <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, a debitis molestiae maxime iste eligendi reiciendis praesentium voluptatum non dolorem atque minus. Tempore nihil, in vero nesciunt itaque officiis illo dolor soluta modi numquam recusandae labore atque delectus asperiores autem consectetur! Blanditiis, officiis assumenda tempore unde voluptatem voluptate. Laudantium, aliquid.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
+                    <div class="card m-auto post-card" style="width: 60rem;">
+                        <img class="card-img-top" src="https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
+                        <div class="card-body">
+                           <div class="row">
+                            <div class="col-9"> <div class="tags d-flex flex-wrap">
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                            </div></div>
+                            <div class="col-3">
+                                <p>4 Weeks Ago</p>
+                            </div>
+                           </div>
+                            <h2 class="card-title text-center">Card title</h2>
+                            <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, a debitis molestiae maxime iste eligendi reiciendis praesentium voluptatum non dolorem atque minus. Tempore nihil, in vero nesciunt itaque officiis illo dolor soluta modi numquam recusandae labore atque delectus asperiores autem consectetur! Blanditiis, officiis assumenda tempore unde voluptatem voluptate. Laudantium, aliquid.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card m-auto post-card" style="width: 60rem;">
+                        <img class="card-img-top" src="https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
+                        <div class="card-body">
+                           <div class="row">
+                            <div class="col-9"> <div class="tags d-flex flex-wrap">
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                            </div></div>
+                            <div class="col-3">
+                                <p>4 Weeks Ago</p>
+                            </div>
+                           </div>
+                            <h2 class="card-title text-center">Card title</h2>
+                            <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, a debitis molestiae maxime iste eligendi reiciendis praesentium voluptatum non dolorem atque minus. Tempore nihil, in vero nesciunt itaque officiis illo dolor soluta modi numquam recusandae labore atque delectus asperiores autem consectetur! Blanditiis, officiis assumenda tempore unde voluptatem voluptate. Laudantium, aliquid.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                            
                     
                 </div>
                 <div class="col-3">
-                    <h1>SIDEBAR</h1>
+                    <ul class="nav nav-tabs post-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Top Post</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Recent Post</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row" class="h3">1</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, incidunt.</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="h3">2</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, incidunt.</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="h3">3</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, incidunt.</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row" class="h3">1</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, incidunt.</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="h3">2</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, incidunt.</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="h3">3</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, incidunt.</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
+                      </div>
                 </div>
             </div>
         </div>
