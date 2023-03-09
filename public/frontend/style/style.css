@@ -47,4 +47,19 @@
   width: 764px;
   height: 573px;
   margin: auto;
+}
+
+.footer-blog {
+  height: 250px;
+}
+
+.page-home {
+  display: flex;
+  justify-content: space-around;
+}
+
+.right {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }/*# sourceMappingURL=style.css.map */

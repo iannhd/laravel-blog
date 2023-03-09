@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,17 +21,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [BlogController::class, 'index'])->name('blog');
 
 Route::group(['middleware' => 'auth'], function(){
     
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('category', CategoryController::class);
     Route::resource('tag', TagController::class);
     Route::resource('post', PostController::class);

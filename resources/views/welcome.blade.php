@@ -64,7 +64,6 @@
         {{-- Header End --}}
 
         {{-- Carousel --}}
-
         <div class="container-fluid carousel-section">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -102,11 +101,9 @@
         <div class="container-fluid my-5">
             <div class="row pill-container">
                 <div class="col-lg-9 col-sm-12 col-md-12 col-xs-12 d-flex flex-wrap ">
-                    <a href="#" class=" tags-pill">Tags</a>
-                    <a href="#" class=" tags-pill">Tags</a>
-                    <a href="#" class=" tags-pill">Tags</a>
-                    <a href="#" class=" tags-pill">Tags</a>
-                    <a href="#" class=" tags-pill">Tags</a>
+                    @foreach ($tag as $tagItem)
+                    <a href="#" class=" tags-pill">{{$tagItem->name}}</a>
+                    @endforeach
                 </div>
                 <div class="m-auto col-lg-2 col-sm-12 col-md-12 xs-12 d-flex align-items-center justify-content-center">
                     <button class="btn btn-secondary btn-block">Show All Categories</button>
@@ -119,78 +116,35 @@
         {{-- POST AND SIDEBAR --}}
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-7">
-                    <div class="card m-auto post-card" style="width: 60rem;">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
-                        <div class="card-body">
-                           <div class="row">
-                            <div class="col-9"> <div class="tags d-flex flex-wrap">
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                            </div></div>
-                            <div class="col-3">
-                                <p>4 Weeks Ago</p>
-                            </div>
-                           </div>
-                            <h2 class="card-title text-center">Card title</h2>
-                            <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, a debitis molestiae maxime iste eligendi reiciendis praesentium voluptatum non dolorem atque minus. Tempore nihil, in vero nesciunt itaque officiis illo dolor soluta modi numquam recusandae labore atque delectus asperiores autem consectetur! Blanditiis, officiis assumenda tempore unde voluptatem voluptate. Laudantium, aliquid.
-                            </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card m-auto post-card" style="width: 60rem;">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
-                        <div class="card-body">
-                           <div class="row">
-                            <div class="col-9"> <div class="tags d-flex flex-wrap">
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                            </div></div>
-                            <div class="col-3">
-                                <p>4 Weeks Ago</p>
-                            </div>
-                           </div>
-                            <h2 class="card-title text-center">Card title</h2>
-                            <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, a debitis molestiae maxime iste eligendi reiciendis praesentium voluptatum non dolorem atque minus. Tempore nihil, in vero nesciunt itaque officiis illo dolor soluta modi numquam recusandae labore atque delectus asperiores autem consectetur! Blanditiis, officiis assumenda tempore unde voluptatem voluptate. Laudantium, aliquid.
-                            </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card m-auto post-card" style="width: 60rem;">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/3194523/pexels-photo-3194523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
-                        <div class="card-body">
-                           <div class="row">
-                            <div class="col-9"> <div class="tags d-flex flex-wrap">
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                                <a href="#" class=" tags-pill">Tags</a>
-                            </div></div>
-                            <div class="col-3">
-                                <p>4 Weeks Ago</p>
-                            </div>
-                           </div>
-                            <h2 class="card-title text-center">Card title</h2>
-                            <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, a debitis molestiae maxime iste eligendi reiciendis praesentium voluptatum non dolorem atque minus. Tempore nihil, in vero nesciunt itaque officiis illo dolor soluta modi numquam recusandae labore atque delectus asperiores autem consectetur! Blanditiis, officiis assumenda tempore unde voluptatem voluptate. Laudantium, aliquid.
-                            </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                            
+            <div class="page-home">
+                <div class="left">
                     
+                    @foreach ($post as $postItem)
+                    <div class="card m-auto post-card" style="width: 60rem;">
+                        <img class="card-img-top" src="{{Storage::url($postItem->gambar)}}" alt="Card image cap">
+                        <div class="card-body">
+                           <div class="row">
+                            <div class="col-9"> <div class="tags d-flex flex-wrap">
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                                <a href="#" class=" tags-pill">Tags</a>
+                            </div></div>
+                            <div class="col-3">
+                                <p>{{$post->created_at}}</p>
+                            </div>
+                           </div>
+                            <h2 class="card-title text-center">{{$postItem->judul}}</h2>
+                            <p class="card-text">
+                            {{$postItem->content}}
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>  
+                    @endforeach
                 </div>
-                <div class="col-3">
+                <div class="right">
                     <ul class="nav nav-tabs post-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Top Post</a>
@@ -239,8 +193,33 @@
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
                       </div>
                 </div>
+                </div>
+                {{$post->links()}}  
+            </div>
+                    
+                            
+                </div>
+                <div class="sidebar-blog">
+                    
             </div>
         </div>
+
+        <footer class="">
+            <div class="container-fluid bg-dark text-white footer-blog">
+                <div class="row h-100">
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-center h-100">
+                        <h1>Get In Touch</h1>
+                        <h5>test@mail.com</h5>
+                    </div>
+                    <div class="col-6 d-flex flex-column align-items-center justify-content-center h-100">
+                        <p>
+                            I'd love to grab tea to talk about anything - from design and tech to esports and kpop. Shoot me an email and we can work something out.
+                        </p>
+                        <p class="small">Yogyakarta, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     
     @stack('addon-script')
     <!-- General JS Scripts -->
