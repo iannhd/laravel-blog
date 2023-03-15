@@ -46,39 +46,28 @@
     </div>
   </nav>
 
-  <section class="hero-image">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-sm-12 col-md-12 ">
-          <img src="https://images.pexels.com/photos/109919/pexels-photo-109919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-          <div class="button-hero">
-            <a class="btn btn-primary btn-sm" href="#" role="button">Learn more</a>
-            <p>It uses utility classes for..</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="my-4 "> 
-
   <section class="content">
     <div class="container mt-3">
-      <h2>Our Recent Story</h2>
       <div class="row d-flex flex-wrap">
         @foreach ($data as $item)
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-10 col-md-10 col-sm-12">
           <div class="container">
             
             <div class="upper mb-2 d-flex align-items-center">
-             <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="profile">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="profile">
               <span class="username">{{$item->users->name}}</span>
               <span class="created">{{date_format($item->created_at, "Y/m/d")}} - {{$item->created_at->diffForHumans()}}</span>
             </div>
-            <a href="{{route('blog.content', $item->slug)}}" class="text-decoration-none text-dark">
-              <img src="{{Storage::url($item->gambar)}}" class="right" alt="...">
-              <h5 class="my-1">{{$item->judul}}</h5></a>
+           
+            <img src="{{Storage::url($item->gambar)}}" class="right" alt="...">
+              <h5 class="my-1 text-center text-capitalize">{{$item->judul}}</h5>
               <p class="text-justify">{!!$item->content!!}</p>
+              <span class="font-weight-light">Diterbitkan dalam kategori</span> <span class="font-italic">{{$item->category->name}}</span>
+              <div>
+                @foreach ($item->tags as $tag)
+                <span class="badge badge-secondary">{{$tag->name}}</span>
+                @endforeach
+              </div>
           </div>
         </div>
         @endforeach

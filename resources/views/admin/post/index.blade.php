@@ -9,7 +9,7 @@
     </div>
     @endif
     <a href="{{route('post.create')}}" class="btn btn-info px-2 mb-4">Tambah Post</a>
-    <table class="table table-striped table-hover table-bordered">
+    <table class="table table-striped table-hover table-bordered table-responsive">
         <thead>
             <tr>
                 <th>No</th>
@@ -31,6 +31,7 @@
                 <td>
                     @foreach($hasil->tags as $tag)
                         <span class="my-2 badge badge-info">{{$tag->name}}</span>
+                       
                     @endforeach
                 </td>
                 <td class=""><img src="{{Storage::url("$hasil->gambar")}}"  alt="" class="img-fluid" style="width:200px"> </td>

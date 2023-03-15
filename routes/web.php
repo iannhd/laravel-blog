@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [BlogController::class, 'index'])->name('blog');
+Route::get('/posts/{slug}', [BlogController::class, 'blog_content'])->name('blog.content');
 
 Route::group(['middleware' => 'auth'], function(){
     

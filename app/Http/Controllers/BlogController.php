@@ -7,16 +7,22 @@ use App\Models\Posts;
 use App\Models\Tags;
 use Illuminate\Http\Request;
 
+
 class BlogController extends Controller
 {
-    public function index()
+    public function index(Posts $posts)
     {
-        $post = Posts::paginate(5);
-        $tag = Tags::paginate(10);
-        $category = Category::all();
+        $data = $posts->orderBy('created_at', 'desc')->take(5)->get();
+        $tag = Tags::all();
+        $post = $posts->all();
+        // dd($post);
+        return view('welcome', compact('data', 'post', 'tag'));
+    }
 
-        // dd($post);        
+    public function blog_content($slug)
+    {
+        $data = Posts::where('slug', $slug)->get();
 
-        return view('welcome', compact('post', 'tag', 'category'));
+        return view('blog-content', compact('data'));
     }
 }
