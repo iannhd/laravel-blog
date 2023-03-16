@@ -21,7 +21,7 @@
                     data-toggle="dropdown"><i class="fas fa-clipboard"></i> <span>Kategori</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::is('/category') ? 'active' : '' }}">
+                    <li class="{{ Request::is('category/*') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ route('category.index') }}">List Kategori</a>
                     </li>

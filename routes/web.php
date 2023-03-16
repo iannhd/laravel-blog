@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::get('/', [BlogController::class, 'index'])->name('blog');
 Route::get('/posts/{slug}', [BlogController::class, 'blog_content'])->name('blog.content');
-
+Route::get('/search', [BlogController::class, 'search'])->name('blog.search');
 Route::group(['middleware' => 'auth'], function(){
     
     Route::get('/home', [HomeController::class, 'index'])->name('home');

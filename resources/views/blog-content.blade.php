@@ -48,6 +48,13 @@
 
   <section class="content">
     <div class="container mt-3">
+      <nav aria-label="breadcrumb" style="width: 80%;">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{route('blog')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">{{$curr->category->name}}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{$curr->judul}}</li>
+        </ol>
+      </nav>
       <div class="row d-flex flex-wrap">
         @foreach ($data as $item)
         <div class="col-lg-10 col-md-10 col-sm-12">
@@ -61,7 +68,7 @@
            
             <img src="{{Storage::url($item->gambar)}}" class="right" alt="...">
               <h5 class="my-1 text-center text-capitalize">{{$item->judul}}</h5>
-              <p class="text-justify">{!!$item->content!!}</p>
+              <p class="text-justify"> {!!$item['content']!!}</p>
               <span class="font-weight-light">Diterbitkan dalam kategori</span> <span class="font-italic">{{$item->category->name}}</span>
               <div>
                 @foreach ($item->tags as $tag)
@@ -74,17 +81,32 @@
       </div>
     </div>
   </section>
+  
+  
+  <div class="container mt-5">
+    <div class="row">
+      <h1>Other stories from us..</h1>
+      @foreach($before as $itemBefore)
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="media mb-5">
+          <a href="{{route('blog.content', $itemBefore->slug)}}">
+            <img class="mr-3" src="{{Storage::url($itemBefore->gambar)}}" alt="Generic placeholder image" style="height: 100px; object-fit:cover;" >
+          </a>
+          <div class="media-body">
+            {{$itemBefore->judul}}
+            <h6 class="mt-1">{{$itemBefore->users->name}} <span>{{date_format($itemBefore->created_at, "Y-m-d")}}</span></h6>
+            <h6><span class="badge badge-light">{{$itemBefore->tags ? $itemBefore->tags : "no tags"}}</span></h6>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="{{asset('library/bootstrap/dist/js/bootstrap.min.js')}}">
-  </script>
-  <script>
-    $('#myCarousel').carousel({
-  interval: 3000,
-  cycle: true
-}); 
   </script>
 </body>
 </html>

@@ -10,7 +10,7 @@
   <title>Document</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top fixing-navbar">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -39,46 +39,41 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
   </nav>
 
-  <section class="hero-image">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-sm-12 col-md-12 ">
-          <img src="https://images.pexels.com/photos/109919/pexels-photo-109919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-          <div class="button-hero">
-            <a class="btn btn-primary btn-sm" href="#" role="button">Learn more</a>
-            <p>It uses utility classes for..</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class="hero-image" style="background-image: url({{Storage::url('upload/posts/1678048734Sepatu-Nike-Pixabay.com_-750x536.jpg')}}); height: 600px; background-position: center; background-repeat:no-repeat;background-size: cover; object-fit: cover;">
+   
   </section>
-
-  <hr class="my-4 "> 
+  <hr class="my-4 top-separator"> 
 
   <section class="content">
     <div class="container mt-3">
-      <h2>Our Recent Story</h2>
-      <div class="row d-flex flex-wrap">
+      <h2>Tulisan terbaru kami..</h2>
+      <form action="{{route('blog.search')}}" method="GET" class="form-inline my-2 my-lg-0">
+        @csrf
+        <input class="form-control mr-sm-2" type="search" placeholder="Cari Artikel.." aria-label="Search" name="search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Cari</button>
+      </form>
+      <form action="{{route('blog')}}" method="GET">
+        @csrf
+        <button type="submit" class="btn btn-outline-dark ">Tampilkan semua tulisan</button>
+      </form>
+      <div class="row ">
         @foreach ($data as $item)
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div class="container">
-            
-            <div class="upper mb-2 d-flex align-items-center">
-             <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="profile">
-              <span class="username">{{$item->users->name}}</span>
-              <span class="created">{{date_format($item->created_at, "Y/m/d")}} - {{$item->created_at->diffForHumans()}}</span>
-            </div>
-            <a href="{{route('blog.content', $item->slug)}}" class="text-decoration-none text-dark">
-              <img src="{{Storage::url($item->gambar)}}" class="right" alt="...">
-              <h5 class="my-1">{{$item->judul}}</h5></a>
-              <p class="text-justify">{!!$item->content!!}</p>
+        {{-- <hr class="my-4 post-separator"> --}}
+        <div class="col-sm-12 d-flex my-5" style="max-height: 150px">
+          <a href="{{route('blog.content', $item->slug)}}"  style="width:150px;object-fit:cover;" >
+            <img src="{{Storage::url($item->gambar)}}"alt="" style="width: 100%">
+          </a>
+          <div class=" d-flex flex-column" style="height: 100%">
+            <h5 class="ml-2 text-capitalize text-left">{{$item->judul}}</h5>
+          
+            <p class="ml-2 mb-0 text-left">Tulisan oleh <span class=" font-weight-bold">{{$item->users->name}}</span>
+            </p>
+            <p class="ml-2 mb-0 text-left">Kategory tulisan: <br> <span class="font-weight-bold">"{{$item->category->name}}"</span>
+            </p>
+            <p class="ml-2 mb-0 text-left">Ditulis pada {{date_format($item->created_at, "Y-m-d")}}
           </div>
         </div>
         @endforeach

@@ -22,7 +22,16 @@ class BlogController extends Controller
     public function blog_content($slug)
     {
         $data = Posts::where('slug', $slug)->get();
+        $id = Posts::where('slug', $slug)->first()->id;
+        $curr = Posts::where('slug', $slug)->first();
+        $before = Posts::where('id', '<', $id)->take(3)->get();
+        // dd($curr);
+        return view('blog-content', compact('data', 'before', 'curr'));
+    }
 
-        return view('blog-content', compact('data'));
+    public function search(Request $request)
+    {
+        $data = Posts::where('judul', $request->search)->orWhere('judul', 'like', '%' . $request->search . '%')->paginate(6);
+        return view('welcome', compact('data'));
     }
 }
